@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)file:///C:/Users/Administrator/Downloads/Riwyt%20-%20Profile%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwyt - Profile</title>
+    <link href="./Riwyt - Profile_files/css2" rel="stylesheet">
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --gold: #b8860b;
+        --gold-light: #d4a017;
+        --gold-pale: #f5edd6;
+        --black: #1a1a1a;
+        --charcoal: #333333;
+        --warm-gray: #7a7a7a;
+        --off-white: #fafaf8;
+        --white: #ffffff;
+        --border: #e8e0cc;
+      }
+
+      body {
+        font-family: "Jost", sans-serif;
+        background: var(--white);
+        color: var(--black);
+        line-height: 1.6;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* ── COVER PAGE ── */
+      .cover {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: var(--white);
+        position: relative;
+        padding: 60px 40px;
+        page-break-after: always;
+        overflow: hidden;
+      }
+
+      .cover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(
+          90deg,
+          var(--gold),
+          var(--gold-light),
+          var(--gold)
+        );
+      }
+
+      .cover::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(
+          90deg,
+          var(--gold),
+          var(--gold-light),
+          var(--gold)
+        );
+      }
+
+      .cover-logo {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .cover-logo img {
+        width: 120px !important;
+        height: auto !important;
+      }
+
+      .cover-corner {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-color: var(--gold);
+        border-style: solid;
+        opacity: 0.3;
+      }
+      .cover-corner.tl {
+        top: 30px;
+        left: 30px;
+        border-width: 1px 0 0 1px;
+      }
+      .cover-corner.tr {
+        top: 30px;
+        right: 30px;
+        border-width: 1px 1px 0 0;
+      }
+      .cover-corner.bl {
+        bottom: 30px;
+        left: 30px;
+        border-width: 0 0 1px 1px;
+      }
+      .cover-corner.br {
+        bottom: 30px;
+        right: 30px;
+        border-width: 0 1px 1px 0;
+      }
+
+      .cover-tag {
+        font-family: "Jost", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 48px;
+      }
+
+      .cover-brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(56px, 10vw, 96px);
+        font-weight: 300;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        color: var(--black);
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+
+      .cover-brand span {
+        color: var(--gold);
+      }
+
+      .cover-sub {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(14px, 2.5vw, 20px);
+        font-weight: 300;
+        font-style: italic;
+        letter-spacing: 3px;
+        color: var(--warm-gray);
+        margin-bottom: 56px;
+        text-align: center;
+      }
+
+      .cover-divider {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 56px;
+        width: 240px;
+      }
+      .cover-divider::before,
+      .cover-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.5;
+      }
+      .cover-divider-diamond {
+        width: 8px;
+        height: 8px;
+        background: var(--gold);
+        transform: rotate(45deg);
+        flex-shrink: 0;
+      }
+
+      .cover-tagline {
+        font-family: "Jost", sans-serif;
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: var(--warm-gray);
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      /* ── BODY PAGES ── */
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 80px 60px;
+        page-break-after: always;
+      }
+
+      /* Section header */
+      .section-label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .section-label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+        max-width: 60px;
+      }
+
+      .section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 300;
+        color: var(--black);
+        line-height: 1.1;
+        margin-bottom: 32px;
+      }
+
+      .section-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      .body-text {
+        font-size: 15px;
+        font-weight: 300;
+        color: var(--charcoal);
+        line-height: 1.85;
+        margin-bottom: 24px;
+        max-width: 640px;
+      }
+
+      /* ── SERVICES GRID ── */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-top: 40px;
+      }
+
+      .service-card {
+        background: var(--white);
+        padding: 32px 28px;
+        position: relative;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 0;
+        background: var(--gold);
+        transition: height 0.3s ease;
+      }
+
+      .service-card:hover::before {
+        height: 100%;
+      }
+
+      .service-icon {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+
+      .service-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--black);
+        margin-bottom: 8px;
+      }
+
+      .service-desc {
+        font-size: 13px;
+        font-weight: 300;
+        color: var(--warm-gray);
+        line-height: 1.7;
+      }
+
+      /* ── WHY US ── */
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+      }
+
+      .why-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .why-check {
+        width: 28px;
+        height: 28px;
+        background: var(--gold-pale);
+        border: 1px solid var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 13px;
+        color: var(--gold);
+        margin-top: 2px;
+      }
+
+      .why-text {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--charcoal);
+        line-height: 1.6;
+      }
+
+      /* ── EXPERTISE ── */
+      .expertise-list {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .expertise-item {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border);
+        gap: 24px;
+      }
+
+      .expertise-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 13px;
+        font-weight: 300;
+        color: var(--gold);
+        opacity: 0.6;
+        width: 28px;
+        flex-shrink: 0;
+      }
+
+      .expertise-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px !important;
+        font-weight: 400;
+        color: var(--black);
+        flex: 1;
+      }
+
+      .expertise-tag {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 500;
+        background: var(--gold-pale);
+        padding: 4px 12px;
+      }
+
+      /* ── PHOTO PLACEHOLDER ── */
+      .photo-section {
+        margin-top: 48px;
+        background: var(--gold-pale);
+        border: 2px dashed var(--gold);
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px;
+      }
+
+      .photo-icon {
+        font-size: 48px;
+        margin-bottom: 16px;
+        opacity: 0.5;
+      }
+
+      .photo-label {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-style: italic;
+        color: var(--charcoal);
+        margin-bottom: 8px;
+      }
+
+      .photo-caption {
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: var(--warm-gray);
+        max-width: 400px;
+      }
+
+      /* ── CONTACT PAGE ── */
+      .contact-page {
+        background: var(--black);
+        min-height: 60vh;
+        padding: 80px 60px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-page::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      }
+
+      .contact-brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(40px, 6vw, 64px);
+        font-weight: 300;
+        color: var(--white);
+        letter-spacing: 4px;
+        margin-bottom: 8px;
+      }
+      .contact-brand span {
+        color: var(--gold-light);
+      }
+
+      .contact-tagline {
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 56px;
+        font-weight: 500;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 40px;
+        max-width: 700px;
+      }
+
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .contact-icon-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .contact-value {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 300;
+        color: var(--white);
+        line-height: 1.4;
+      }
+
+      .contact-footer {
+        margin-top: 64px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .contact-footer-brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 14px;
+        font-weight: 300;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .contact-footer-copy {
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: rgba(255, 255, 255, 0.2);
+        text-transform: uppercase;
+      }
+
+      /* ── GOLD ACCENT BAR ── */
+      .accent-bar {
+        width: 48px;
+        height: 3px;
+        background: var(--gold);
+        margin-bottom: 40px;
+      }
+
+      /* Print styles */
+      @media print {
+        body {
+          background: white;
+        }
+        .cover,
+        .page,
+        .contact-page {
+          page-break-after: always;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding: 48px 28px;
+        }
+        .cover {
+          padding: 48px 28px;
+        }
+        .contact-page {
+          padding: 48px 28px;
+        }
+      }
+
+      /* subtle fade-in animation */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .cover > * {
+        animation: fadeUp 0.7s ease both;
+      }
+      .cover-tag {
+        animation-delay: 0.1s;
+      }
+      .cover-brand {
+        animation-delay: 0.25s;
+      }
+      .cover-sub {
+        animation-delay: 0.4s;
+      }
+      .cover-divider {
+        animation-delay: 0.55s;
+      }
+      .cover-tagline {
+        animation-delay: 0.7s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════════════════════════
+     COVER PAGE
+════════════════════════════════ -->
+    <div class="cover">
+      <div class="cover-corner tl"></div>
+      <div class="cover-corner tr"></div>
+      <div class="cover-corner bl"></div>
+      <div class="cover-corner br"></div>
+
+      <div class="cover-tag">RIWYT Profile · 2026</div>
+
+      <!-- <div class="cover-logo">
+        <img src="/logo/Logo_by_RIWYT2.png" alt="Riwyt Logo" />
+      </div> -->
+
+      <div class="cover-brand"><span>Riwyt</span></div>
+      <div class="cover-sub">WE DESIGN · WE BUILD · YOU RELAX</div>
+
+      <div class="cover-divider"><div class="cover-divider-diamond"></div></div>
+
+      <div class="cover-tagline">
+        From Concept to Completion — Turnkey solutions
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     ABOUT US
+════════════════════════════════ -->
+    <div class="page">
+      <div class="section-label">01 — Who We Are</div>
+      <h2 class="section-title">
+        Spaces Crafted with<br><em>Purpose &amp; Precision</em>
+      </h2>
+      <div class="accent-bar"></div>
+
+      <p class="body-text">
+        Riwyt is a professional interior design and execution firm specializing
+        in complete <strong>turnkey projects</strong>. We deliver thoughtfully
+        designed spaces with a strong focus on quality, functionality, and
+        aesthetics.
+      </p>
+      <p class="body-text">
+        From the very first concept sketch to final handover, we ensure a
+        smooth, transparent, and hassle-free experience — so our clients can
+        simply enjoy watching their dream space come to life.
+      </p>
+      <p class="body-text">
+        Based in Gandhinagar &amp; Ahmedabad, we serve residential and
+        commercial clients across Gujarat with the same commitment to craft and
+        precision regardless of project scale.
+      </p>
+    </div>
+
+    <!-- ══════════════════════════════
+     SERVICES
+════════════════════════════════ -->
+    <div class="page">
+      <div class="section-label">02 — What We Do</div>
+      <h2 class="section-title">Our <em>Services</em></h2>
+      <div class="accent-bar"></div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <div class="service-name">Residential Interiors</div>
+          <div class="service-desc">
+            Full-home design and execution — from living rooms to bedrooms,
+            kitchens, and beyond.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <div class="service-name">Office &amp; Commercial</div>
+          <div class="service-desc">
+            Modern, productive workspace interiors that reflect your brand
+            identity and culture.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📐</div>
+          <div class="service-name">Space Planning &amp; 3D Design</div>
+          <div class="service-desc">
+            Accurate 3D visualizations so you see your space before a single
+            nail is hammered.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🪑</div>
+          <div class="service-name">Modular &amp; Custom Furniture</div>
+          <div class="service-desc">
+            Bespoke modular units and custom carpentry tailored to your exact
+            space and taste.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <div class="service-name">Turnkey Execution</div>
+          <div class="service-desc">
+            Complete site management — civil, electrical, carpentry, painting,
+            and final finishing.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <div class="service-name">Project Management</div>
+          <div class="service-desc">
+            Dedicated coordinator for timely delivery, quality checks, and
+            transparent updates.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     EXPERTISE
+════════════════════════════════ -->
+    <div class="page">
+      <div class="section-label">03 — Our Expertise</div>
+      <h2 class="section-title">Areas We <em>Excel In</em></h2>
+      <div class="accent-bar"></div>
+
+      <div class="expertise-list">
+        <div class="expertise-item">
+          <div class="expertise-num">01</div>
+          <div class="expertise-name">Modern Office Interiors</div>
+          <div class="expertise-tag">Commercial</div>
+        </div>
+        <div class="expertise-item">
+          <div class="expertise-num">02</div>
+          <div class="expertise-name">Luxury Living Spaces</div>
+          <div class="expertise-tag">Residential</div>
+        </div>
+        <div class="expertise-item">
+          <div class="expertise-num">03</div>
+          <div class="expertise-name">Functional Storage Solutions</div>
+          <div class="expertise-tag">Utility</div>
+        </div>
+        <div class="expertise-item">
+          <div class="expertise-num">04</div>
+          <div class="expertise-name">Custom Furniture &amp; Detailing</div>
+          <div class="expertise-tag">Craftsmanship</div>
+        </div>
+      </div>
+
+      <!-- Photo Placeholder -->
+      <!-- <div class="photo-section">
+    <div class="photo-icon">📸</div>
+    <div class="photo-label">Your Project Photos Here</div>
+    <div class="photo-caption">"Modern Living Space with Custom Paneling & Furniture by Riwyt Interiors" — Add your best project images here to make a lasting impression on every client.</div>
+  </div> -->
+    </div>
+
+    <!-- ══════════════════════════════
+     WHY CHOOSE US
+════════════════════════════════ -->
+    <div class="page">
+      <div class="section-label">04 — Our Promise</div>
+      <h2 class="section-title">Why Client <em>Choose Us</em></h2>
+      <div class="accent-bar"></div>
+
+      <p class="body-text">
+        We believe great interiors are born from trust, clarity, and craft.
+        Here's what sets Riwyt Interiors apart from the rest:
+      </p>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-check">✦</div>
+          <div class="why-text">
+            <strong>One-Point Solution</strong><br>Design and execution under
+            a single roof — no juggling multiple vendors.
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-check">✦</div>
+          <div class="why-text">
+            <strong>Transparent Costing</strong><br>No hidden costs. Detailed
+            quotations with full clarity before work begins.
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-check">✦</div>
+          <div class="why-text">
+            <strong>Skilled Craftsmanship</strong><br>Experienced teams who
+            take pride in quality at every stage.
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-check">✦</div>
+          <div class="why-text">
+            <strong>Timely Delivery</strong><br>Committed timelines with
+            regular progress updates so you're never in the dark.
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-check">✦</div>
+          <div class="why-text">
+            <strong>Customized Designs</strong><br>Every project is unique —
+            tailored to your lifestyle, taste, and budget.
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-check">✦</div>
+          <div class="why-text">
+            <strong>Budget &amp; Premium Options</strong><br>Solutions for every
+            budget range without compromising on aesthetics.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     CONTACT PAGE
+════════════════════════════════ -->
+    <div class="contact-page">
+      <div class="contact-brand"><span>RIWYT</span></div>
+      <div class="contact-tagline">
+        Let's Build Something Beautiful Together
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-icon-label">📍 Location</div>
+          <div class="contact-value">
+            K13, Ground Floor, Besides Mcdonald's, Swagat Queensland, near
+            Sargasan Cross Road, Sargasan,
+            <br>Gandhinagar, Gujarat 382421, India
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-label">📞 Phone</div>
+          <div class="contact-value">+91 6352356606</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-label">📧 Email</div>
+          <div class="contact-value">riwytinfo@gmail.com</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-label">🌐 Website</div>
+          <div class="contact-value">
+            www.riwytinteriors.com<br><span style="font-size: 13px; opacity: 0.5">(Coming Soon)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-footer">
+        <div class="contact-footer-brand">
+          From Concept to Completion — Riwyt
+        </div>
+        <div class="contact-footer-copy">
+          © 2026 Riwyt · All Rights Reserved
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
